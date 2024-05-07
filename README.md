@@ -1,6 +1,8 @@
 # CS3380-HotelManagmenetSQL
 Phase 3 of Project for CS3380
 
+## GithubLink - https://github.com/TrentonRoney/CS3380-HotelManagmenetSQL
+
 ### Description
 I decided to make a Hotel Management System that focuses on the reservation details. It provides a few functionalities and is made using the lanugage Python. There are example uses at the bottom. Those should return the ReservationID, Room Number, and Checkin/Checkout date. When getting current reservation details, it should do the same, but also return the Guest ID since the reservation has already been made.
 
