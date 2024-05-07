@@ -53,6 +53,34 @@ def reservation_details(guest_id):
     except mysql.connector.Error as err:
         print("Error fetching reservation details:", err)
 
+# Function to manage reservation by guests
+def guest_manage_reservation(reservation_id, updated_check_in, updated_check_out, updated_room_preference, updated_additional_services):
+    try:
+        # Retrieve current reservation details
+        cursor.execute("SELECT * FROM Reservations WHERE reservation_id = %s", (reservation_id,))
+        reservation = cursor.fetchone()
+
+        if not reservation:
+            print("Reservation not found.")
+            return
+
+        # Display current reservation details
+        print("Current Reservation Details:")
+        print("Reservation ID:", reservation[0])
+        print("Guest ID:", reservation[1])
+        print("Room Number:", reservation[2])
+        print("Check-in Date:", reservation[3])
+        print("Check-out Date:", reservation[4])
+
+        # Update reservation record
+        cursor.execute("UPDATE Reservations SET check_in = %s, check_out = %s, room_preference = %s, additional_services = %s WHERE reservation_id = %s",
+                       (updated_check_in, updated_check_out, updated_room_preference, updated_additional_services, reservation_id))
+        connection.commit()
+
+        print("Reservation successfully updated!")
+    except mysql.connector.Error as err:
+        print("Error updating reservation:", err)
+
 # Close cursor and connection
 cursor.close()
 connection.close()
@@ -101,6 +129,15 @@ reservation_details(guest_info['guest_id'])
 reservation_details(guest_info_2['guest_id'])
 
 reservation_details(guest_info_3['guest_id'])
+
+# Example usage of the guest_manage_reservation function
+reservation_id_to_update = 1  # Replace with the reservation ID you want to update
+updated_check_in = '2024-08-15'
+updated_check_out = '2024-08-20'
+updated_room_preference = 'Double'
+updated_additional_services = 'Late checkout'
+
+guest_manage_reservation(reservation_id_to_update, updated_check_in, updated_check_out, updated_room_preference, updated_additional_services)
 # Close cursor and connection
 cursor.close()
 connection.close()
