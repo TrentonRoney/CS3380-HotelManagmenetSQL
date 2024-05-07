@@ -2,12 +2,13 @@
 Phase 3 of Project for CS3380
 
 ### Description
-I decided to make a Hotel Management System that focuses on the reservation details. It provides a few functionalities and is made using the lanugage Python.
+I decided to make a Hotel Management System that focuses on the reservation details. It provides a few functionalities and is made using the lanugage Python. There are example uses at the bottom. Those should return the ReservationID, Room Number, and Checkin/Checkout date. When getting current reservation details, it should do the same, but also return the Guest ID since the reservation has already been made.
 
 ### Features
-Make Reservation - Guests can make reservations.
-Reservation Details - Guests can review their reservation details.
-GuestManageReservation - Guests can manage and change things about their reservation.
+##### Make Reservation - Guests can make reservations.
+##### Reservation Details - Guests can review their reservation details.
+##### GuestManageReservation - Guests can manage and change things about their reservation.
+
 
 
 ## If needed, here is the code for creating the tables in the MySQL database.
