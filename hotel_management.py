@@ -82,9 +82,25 @@ room_preference = 'Single'
 
 make_reservation(guest_info, check_in, check_out, room_preference)
 
+guest_info_2 = {'guest_id': 2}  # Assuming guest ID 2 exists in the database
+check_in_2 = '2024-07-01'
+check_out_2 = '2024-07-05'
+room_preference_2 = 'Suite'
+
+make_reservation(guest_info_2, check_in_2, check_out_2, room_preference_2)
+
+guest_info_3 = {'guest_id': 3}  # Assuming guest ID 3 exists in the database
+check_in_3 = '2024-08-01'
+check_out_3 = '2024-08-07'
+room_preference_3 = 'Suite'
+
+make_reservation(guest_info_3, check_in_3, check_out_3, room_preference_3)
 # Assuming the guest wants to view their reservation details
 reservation_details(guest_info['guest_id'])
 
+reservation_details(guest_info_2['guest_id'])
+
+reservation_details(guest_info_3['guest_id'])
 # Close cursor and connection
 cursor.close()
 connection.close()
